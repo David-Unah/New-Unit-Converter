@@ -34,19 +34,19 @@ const meter = document.getElementById("meter")
         measureListOne.classList.toggle("show")
             if (meter.innerText === list[1].innerText) {
                 list[1].classList.add("darken")
-                listDarkedSelect(list, [2, 3, 4, 5])
+                listDarkedSelect(list, 2, 3, 4, 5)
             } else if (meter.innerText === list[2].innerText) {
                 list[2].classList.add("darken")
-                listDarkedSelect(list, [1, 3, 4, 5])
+                listDarkedSelect(list, 1, 3, 4, 5)
             } else if (meter.innerText === list[3].innerText) {
                 list[3].classList.add("darken")
-                listDarkedSelect(list, [1, 2, 4, 5])
+                listDarkedSelect(list, 1, 2, 4, 5)
             } else if (meter.innerText === list[4].innerText) {
                 list[4].classList.add("darken")
-                listDarkedSelect(list, [1, 2, 3, 5])
+                listDarkedSelect(list, 1, 2, 3, 5)
             } else {
                 list[5].classList.add("darken")
-                listDarkedSelect(list, [1, 2, 3, 4])
+                listDarkedSelect(list, 1, 2, 3, 4)
             }
     })
 
@@ -149,43 +149,55 @@ for (let i = 0; i < list.length; i++) {
 })
 } 
 
-
 const lowerList = document.getElementsByClassName("lower--list")
 const bottomSelect = document.getElementById("bottom--select")
-
-    details[1].addEventListener('click', function() {
+details[1].addEventListener('click', function() {
         measureListTwo.classList.toggle("show")
-            if (bottomSelect.innerText === lowerList[1].innerText) {
-                lowerList[1].classList.add("darken")
-                listDarkedSelect(lowerList, [2, 3, 4, 5])
-            } else if (bottomSelect.innerText === lowerList[2].innerText) {
-                lowerList[2].classList.add("darken")
-                listDarkedSelect(lowerList, [1, 3, 4, 5])
-            } else if (bottomSelect.innerText === lowerList[3].innerText) {
-                lowerList[3].classList.add("darken")
-                listDarkedSelect(lowerList, [1, 2, 4, 5])
-            } else if (bottomSelect.innerText === lowerList[4].innerText) {
-                lowerList[4].classList.add("darken")
-                listDarkedSelect(lowerList, [1, 2, 3, 5])
-            } else {
-                lowerList[5].classList.add("darken")
-                listDarkedSelect(lowerList, [1, 2, 3, 4])
-            }
+        if (bottomSelect.innerText === lowerList[1].innerText) {
+            lowerList[1].classList.add("darken")
+            listDarkedSelect(lowerList, 2, 3, 4, 5)
+        } else if (bottomSelect.innerText === lowerList[2].innerText) {
+            lowerList[2].classList.add("darken")
+            listDarkedSelect(lowerList, 1, 3, 4, 5)
+        } else if (bottomSelect.innerText === lowerList[3].innerText) {
+            lowerList[3].classList.add("darken")
+            listDarkedSelect(lowerList, 1, 2, 4, 5)
+        } else if (bottomSelect.innerText === lowerList[4].innerText) {
+            lowerList[4].classList.add("darken")
+            listDarkedSelect(lowerList, 1, 2, 3, 5)
+        } else if (bottomSelect.innerText === lowerList[5].innerText) {
+            lowerList[5].classList.add("darken")
+            listDarkedSelect(lowerList, 1, 2, 3, 4)
+        }
+})
+
+
+for (let i = 0; i < lowerList.length; i++) {
+    lowerList[i].addEventListener('click', function() {
+        if (lowerList[i] === lowerList[0]) {
+            measureListTwo.classList.toggle("show")
+        } else {
+        measureListTwo.classList.toggle("show")
+        let currentList2 = lowerList[i].textContent
+        bottomSelect.innerHTML = `${currentList2} <img src="./img/Vector.png" alt="triangle"/>`
+        }
     })
+}
+
 
 
 
 
 
 //list darken function
-function listDarkedSelect(listType, arr) {
+function listDarkedSelect(item, a, b, c, d) {
     input.value = ''
     result.textContent = input.value
     calculate.textContent = 'calculation goes in here'
-    let range = arr
-    range.forEach(element => {
-        listType[element].classList.remove("darken")
-    })
+    item[a].classList.remove("darken")
+    item[b].classList.remove("darken")
+    item[c].classList.remove("darken")
+    item[d].classList.remove("darken")
 }
 
 
