@@ -58,6 +58,8 @@ for (let i = 0; i < list.length; i++) {
     list[i].addEventListener('click', function() {
         if (list[i] === list[0]) {
             measureList[0].classList.toggle("show")
+            topDetails.classList.toggle("swap")
+            bomDetails.classList.toggle("swapp")
         } else {
             measureList[0].classList.toggle("show")
             let currentList = list[i].textContent   
@@ -93,6 +95,8 @@ for (let i = 0; i < lowerList.length; i++) {
     lowerList[i].addEventListener('click', function() {
         if (lowerList[i] === lowerList[0]) {
             measureListTwo.classList.toggle("show")
+            topDetails.classList.toggle("swap")
+            bomDetails.classList.toggle("swapp")
         } else {
         measureListTwo.classList.toggle("show")
         let currentList2 = lowerList[i].textContent
@@ -117,10 +121,11 @@ function listDarkedSelect(item, a, b, c, d) {
     item[d].classList.remove("darken")
 }
 
+
+
 //correspondng input
 
 input.addEventListener("input", function() {
-
     if (meter.innerText === "Meter") {
         if (bottomSelect.innerText === "Kilometer") {
             conversionToKilometer(1000)
@@ -243,3 +248,13 @@ function convertCenToFoot(num, tofix) {
     result.textContent = convertToKilometer.toFixed(tofix)
     calculate.textContent = `${input.value} / ${meterValue} In`
 }
+
+const swapIcon = document.getElementById("swapIcon")
+const topDetails = document.getElementById("Topdetails")
+const bomDetails = document.getElementById("btm-details")
+swapIcon.addEventListener('click', () => {
+    topDetails.classList.toggle("swap")
+    bomDetails.classList.toggle("swapp")
+})
+
+

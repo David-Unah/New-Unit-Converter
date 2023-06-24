@@ -78,7 +78,17 @@ button {
     padding: 12px ;
     padding-bottom: 40px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    transition: all 4s;
 }
+
+.swap {
+    transform: translateY(280px);
+}
+
+.swapp {
+    transform: translateY(-280px);
+}
+
 
 
 hr {
@@ -138,6 +148,15 @@ input::placeholder {
     font-size: 30px;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+
+
+
+
 
 p.con--result {
     width: 95%;
@@ -146,6 +165,7 @@ p.con--result {
     font-size: 50px;
     line-height: 61px;
     text-align: right;
+    overflow-x: hidden;
     
 }
 
