@@ -1,13 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Master Unit Converter</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Unit Converter</h1>
+    <div class="measurement--nav">
+        <button>Mass</button>
+        <button>Volume</button>
+        <button>Length</button>
+    </div>
+    <div class="main--content">
+        <div class="top--details" id="Topdetails">
+            <h2 class="perferred--unit" id="meter">Meter<img src="./img/Vector.png" alt="triangle"
+                    class="triangle--image" /></h2>
+            <div class="measure--list" id="measure--listOne">
+                <p class="list" style="color: #1ECBEF;">Swap</p>
+                <p class="list">Meter</p>
+                <p class="list">Kilometer</p>
+                <p class="list">Centimeter</p>
+                <p class="list">Foot</p>
+                <p class="list">Yard</p>
+            </div>
+            <input class="input initial-display" type="number" placeholder="insert value"/>
+            <p class="con--result swap-display">0</p>
+            <p class="calculator swap-display">calculations goes in here</p>
+        </div>  
+        <div class="swap--container">
+            <img src="./img/Group200.png" alt="swap icon" class="swap--icon" id="swapIcon">
+        </div>
+        <div class="bottom--details" id="btm-details">
+            <h2 class="perferred--unit" id="bottom--select">Foot<img src="./img/Vector.png" alt="triangle" /></h2>
+            <div class="measure--list" id="measure--listTwo">
+                <p class="lower--list" style="color: #1ECBEF;">Swap</p>
+                <p class="lower--list">Meter</p>
+                <p class="lower--list">Kilometer</p>
+                <p class="lower--list">Centimeter</p>
+                <p class="lower--list">Foot</p>
+                <p class="lower--list">Yard</p>
+            </div>
+            <input class="input swap-display" type="number" placeholder="insert value" />
+            <p class="con--result initial-display">0</p>
+            <p class="calculator initial-display">calculations goes in here</p>
+        </div>
+    </div>
+
+
+
+    <!-- <h1>Unit Converter</h1>
     <div class="measurement--nav">
         <button>Mass</button>
         <button>Volume</button>
@@ -42,7 +87,8 @@
             <p class="con--result" id="result">0</p>
             <p class="calculator" id="calculate">calculations goes in here</p>
         </div>
-    </div>
-    <script src="script.js"></script>
+    </div> -->
+    <script src="script2.js"></script>
 </body>
+
 </html>

@@ -252,9 +252,22 @@ function convertCenToFoot(num, tofix) {
 const swapIcon = document.getElementById("swapIcon")
 const topDetails = document.getElementById("Topdetails")
 const bomDetails = document.getElementById("btm-details")
+const topResult = document.getElementById("top-result")
+const topCalculator = document.getElementById("top-calculator")
+const bottomInput = document.getElementById("bottom-input")
+
+const topInput = document.getElementById("top-input")
+const bottomResult = document.getElementById("bottom-result")
+const bottomCalculator = document.getElementById("bottom-calculator")
 swapIcon.addEventListener('click', () => {
     topDetails.classList.toggle("swap")
     bomDetails.classList.toggle("swapp")
+    topResult.classList.toggle("show-element")
+    topCalculator.classList.toggle("show-element")
+    bottomInput.classList.toggle("show-element")
+    topInput.classList.toggle("hide-element")
+    bottomResult.classList.toggle("hide-element")
+    bottomCalculator.classList.toggle("hide-element")
 })
 
 

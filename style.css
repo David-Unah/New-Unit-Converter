@@ -79,16 +79,41 @@ button {
     padding: 12px ;
     padding-bottom: 40px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    transition: all 4s;
+    transition: transform 1s;
 }
 
-.top--details {
+.z-indextop {
     z-index: 2;
 }
 
-.bottom--details {
-    z-index: 1;
+.z-indextottom {
+    z-index: 7;
 }
+
+.swap-display {
+    display: none;
+}
+
+
+
+.initial-display {
+    display: block;
+}
+
+
+
+
+/* .show-element {
+    display: block;
+} */
+
+/* .hide-element {
+    display: none;
+}
+ */
+
+
+
 
 
 .swap {
@@ -115,23 +140,22 @@ hr {
     cursor: pointer;
 }
 
-.bounce {
-    animation: bounceListSelect;
-    animation-duration: 1s;
-    animation-direction: alternate-reverse;
-    animation-iteration-count: infinite;  
-}   
 
-@keyframes bounceListSelect {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    50% {
-        transform: translate3d(0, -30px, 0);
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the element */
+.bounce {
+  animation: bounce 1s infinite;
 }
 
 
@@ -153,6 +177,9 @@ input {
     border-radius: 20px;
     padding-right: 10px;
 }
+
+
+
 
 input::placeholder {
     font-size: 30px;
@@ -335,24 +362,22 @@ p.con--result {
         height: 7.38px;
     }
     
-    .bounce {
-        animation: bounceListSelect;
-        animation-duration: 1.5s;
-        animation-direction: alternate-reverse;
-        animation-iteration-count: infinite;  
-    }   
-    
-    @keyframes bounceListSelect {
-        0% {
-            transform: translate3d(0, 0, 0);
-        }
-        50% {
-            transform: translate3d(0, -20px, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
+    @keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the element */
+.bounce {
+  animation: bounce 1s infinite;
+}
     
     
       
