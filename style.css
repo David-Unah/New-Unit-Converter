@@ -90,27 +90,16 @@ button {
     z-index: 7;
 }
 
-.swap-display {
-    display: none;
-}
-
-
 
 .initial-display {
     display: block;
 }
 
-
-
-
-/* .show-element {
-    display: block;
-} */
-
-/* .hide-element {
+.swap-display {
     display: none;
 }
- */
+
+
 
 
 
