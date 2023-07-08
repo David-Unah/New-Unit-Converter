@@ -1,15 +1,5 @@
+
 const button = document.getElementsByTagName("button")
-for (let i = 0; i < button.length; i++) {
-    button[i].addEventListener('click', () => {
-        if (button[i] === button[0]) {
-            buttonColor(1, 2)
-        } else if (button[i] === button[1]) {
-            buttonColor(0, 2)
-        } else {
-            buttonColor(0, 1)
-        }
-    })
-}
 
 //button color light control when clicked
 function buttonColor(a, b) {
@@ -19,6 +9,50 @@ function buttonColor(a, b) {
     button[b].classList.remove("button-color")
     }
 }    
+
+function dynamicNav(topList, bottomList, option1, option2, option3) {
+    document.getElementById("meter").innerHTML = `${topList} <img src="./img/Vector.png" alt="triangle"/>`
+    document.getElementById("bottom--select").innerHTML = `${bottomList} <img src="./img/Vector.png" alt="triangle"/>`
+    const list = document.getElementsByClassName("length-list")
+    for (let j = 0; j < list.length; j++) {
+          list[j].style.display = `${option1}`
+    }
+    const volumes = document.getElementsByClassName("volumes")
+    for (let r = 0; r < volumes.length; r++) {
+        volumes[r].style.display = `${option2}`
+    }
+    const masses = document.getElementsByClassName("masses")
+    for (let k = 0; k < masses.length; k++) {
+        masses[k].style.display = `${option3}`
+    }
+    for (let y = 0; y < input.length; y++) {
+        input[y].value = '' 
+    }
+    for (let p = 0; p < result.length; p++) {
+        result[p].textContent = 0
+    }
+    for (let t = 0; t < calculator.length; t++) {
+        calculator[t].textContent = "Calculation goes in here"
+    }
+    meter.classList.remove("bounce")
+    bottomSelect.classList.remove("bounce")
+}
+
+for (let i = 0; i < button.length; i++) {
+    button[i].addEventListener('click', () => {
+        if (button[i] === button[0]) {
+            buttonColor(1, 2)
+            dynamicNav("Meter", "Foot", "flex", "none", "none")
+        } else if (button[i] === button[1]) {
+            buttonColor(0, 2)
+            dynamicNav("Liter", "Milliliter", "none", "flex", "none")
+        } else {
+            buttonColor(0, 1)
+            dynamicNav("Tonne", "Milligram", "none", "none", "flex")
+        }
+    })
+}
+
 
 const result = document.getElementsByClassName("con--result")
 const calculator = document.getElementsByClassName("calculator")
@@ -83,7 +117,7 @@ function listDarkedSelect(item, a, b, c, d) {
 
 
 
-details[0].addEventListener('click', function(e) {
+details[0].addEventListener('click', function() {
     measureListOne.classList.toggle("show")
     if (meter.innerText === list[1].innerText) {
         list[1].classList.add("darken")
@@ -124,6 +158,7 @@ for (let i = 0; i < list.length; i++) {
             for (let p = 0; p < calculator.length; p++) {
                 calculator[p].textContent = "calculations goes in here"
             }
+            meter.classList.remove("bounce")
             let currentList = list[i].textContent   
             meter.innerHTML = `${currentList} <img src="./img/Vector.png" alt="triangle"/>`
         }
@@ -133,7 +168,7 @@ for (let i = 0; i < list.length; i++) {
 
 const lowerList = document.getElementsByClassName("lower--list")
 const bottomSelect = document.getElementById("bottom--select")
-details[1].addEventListener('click', function(e) {
+details[1].addEventListener('click', function() {
         measureListTwo.classList.toggle("show")
         if (bottomSelect.innerText === lowerList[1].innerText) {
             lowerList[1].classList.add("darken")
@@ -246,7 +281,59 @@ input[0].addEventListener("input", function() {
         } else if (bottomSelect.innerText === "Yard") {
             similarText()
         }
-    } 
+    } else if (meter.innerText === "Tonne") {
+        if (bottomSelect.innerText === "Kilogram") {
+            convertToCentimeter(1000) // tne to kilogram - reused function
+        } else if (bottomSelect.innerText === "Gram") {
+            convertToCentimeter(1000000) // tonne to gram - reused function
+        } else if (bottomSelect.innerText === "Milligram") {
+            convertToCentimeter(1000000000)
+        } else if (bottomSelect.innerText === "Tonne") {
+            similarText()
+        }
+    } else if (meter.innerText === "Kilogram") {
+        if (bottomSelect.innerText === "Tonne") {
+            convertToKilometer(1000)
+        } else if (bottomSelect.innerText === "Gram") {
+            convertToCentimeter(1000)
+        } else if (bottomSelect.innerText === "Milligram") {
+            convertToCentimeter(1000000)
+        } else if (bottomSelect.innerText === "Kilogram") {
+            similarText()
+        }
+    } else if (meter.innerText === "Gram") {
+        if (bottomSelect.innerText === "Tonne") {
+            convertToKilometer(1000000)
+        } else if (bottomSelect.innerText === "Kilogram") {
+            convertToKilometer(1000)
+        } else if (bottomSelect.innerText === "Milligram") {
+            convertToCentimeter(1000)
+        } else if (bottomSelect.innerText === "Gram") {
+            similarText()
+        }
+    } else if (meter.innerText === "Milligram") {
+        if (bottomSelect.innerText === "Tonne") {
+            convertToKilometer(1000000000)
+        } else if (bottomSelect.innerText === "Kilogram") {
+            convertToKilometer(1000000)
+        } else if (bottomSelect.innerText === "Gram") {
+            convertToKilometer(1000)
+        } else if (bottomSelect.innerText === "Milligram") {
+            similarText()
+        }
+    } else if (meter.innerText === "Liter") {
+        if (bottomSelect.innerText === "Milliliter") {
+            convertToCentimeter(1000)
+        } else if (bottomSelect.innerText === "Liter") {
+            similarText()
+        }
+    } else if (meter.innerText === "Milliliter") {
+        if (bottomSelect.innerText === "Liter") {
+            convertToKilometer(1000)
+        } else if (bottomSelect.innerText === "Milliliter") {
+            similarText()
+        }
+    }
 
 })
 
@@ -322,6 +409,58 @@ input[1].addEventListener("input", function() {
         } else if (meter.innerText === "Yard") {
             similarTextSecond()
         }
+    } else if (bottomSelect.innerText === "Tonne") {
+        if (meter.innerText === "Kilogram") {
+            convertToCentimeter(1000) // tne to kilogram - reused function
+        } else if (meter.innerText === "Gram") {
+            convertToCentimeter(1000000) // tonne to gram - reused function
+        } else if (meter.innerText === "Milligram") {
+            convertToCentimeter(1000000000)
+        } else if (meter.innerText === "Tonne") {
+            similarText()
+        }
+    } else if (bottomSelect.innerText === "Kilogram") {
+        if (meter.innerText === "Tonne") {
+            convertToKilometer(1000)
+        } else if (meter.innerText === "Gram") {
+            convertToCentimeter(1000)
+        } else if (meter.innerText === "Milligram") {
+            convertToCentimeter(1000000)
+        } else if (meter.innerText === "Kilogram") {
+            similarText()
+        }
+    } else if (bottomSelect.innerText === "Gram") {
+        if (meter.innerText === "Tonne") {
+            convertToKilometer(1000000)
+        } else if (meter.innerText === "Kilogram") {
+            convertToKilometer(1000)
+        } else if (meter.innerText === "Milligram") {
+            convertToCentimeter(1000)
+        } else if (meter.innerText === "Gram") {
+            similarText()
+        }
+    } else if (bottomSelect.innerText === "Milligram") {
+        if (meter.innerText === "Tonne") {
+            convertToKilometer(1000000000)
+        } else if (meter.innerText === "Kilogram") {
+            convertToKilometer(1000000)
+        } else if (meter.innerText === "Gram") {
+            convertToKilometer(1000)
+        } else if (meter.innerText === "Milligram") {
+            similarText()
+        }
+    } else if (bottomSelect.innerText === "Liter") {
+        if (meter.innerText === "Milliliter") {
+            convertToCentimeter(1000)
+        } else if (meter.innerText === "Liter") {
+            similarText()
+        }
+    } else if (bottomSelect.innerText === "Milliliter") {
+        if (meter.innerText === "Liter") {
+            convertToKilometer(1000)
+        } else if (meter.innerText === "Milliliter") {
+            similarText()
+        }
     }
 
 
@@ -363,9 +502,9 @@ function convertToCentimeter(num) {
     const meterValue = num
         const convertToCentimeter = inputData * meterValue
             for (let j = 0; j < result.length; j++) {
-                result[0].textContent = convertToCentimeter
+                result[j].textContent = convertToCentimeter
                     for (let p = 0; p < calculator.length; p++) {
-                        calculator[0].textContent = `${inputData} x ${meterValue} In`
+                        calculator[p].textContent = `${inputData} x ${meterValue} In`
                 }
             }
         }  
@@ -381,3 +520,6 @@ function convertToFeet(num) {
                 }
             }
         }  
+
+
+

@@ -5,9 +5,9 @@ body {
     background: #222222;
     color: #ffffff;
     font-family: 'inter', sans-serif;
-    background-image: url(./img/Ellipse\ 42.png), url(./img/Ellipse\ 43.png), url(./img/Ellipse\ 41.png);
+    /* background-image: url(./img/Ellipse\ 42.png), url(./img/Ellipse\ 43.png), url(./img/Ellipse\ 41.png);
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-position: 75% 20%, 25% 70%, 75% 120%;
+    background-position: 75% 20%, 25% 70%, 75% 120%; */
 }
 
 * {
@@ -22,6 +22,116 @@ body {
     
 }
 
+#firstlight, #secondlight, #thirdlight, #fourthlight {
+    position: absolute;
+    animation: zigzag 9s linear infinite;
+
+}
+
+#firstlight  {
+    left: 65%;
+    animation: ziggy 7s linear infinite;
+
+}
+
+#thirdlight {
+    left: 65%;
+    top: 70%;
+    animation: ziggy2 7s linear infinite;
+}
+
+@keyframes zigzag {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(100px) translateY(600px);
+    }
+    35% {
+        transform: translateX(800px) translateY(600px); 
+    }
+    50% {
+      transform: translateX(0) translateY(0);
+    }
+    75% {
+      transform: translateX(-100px) translateY(100px);
+    }
+    85% {
+      transform: translateX(100px) translateY(-100px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+
+  @keyframes ziggy {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(100px) translateY(300px);
+    }
+    35% {
+        transform: translateX(-400px) translateY(300px);
+    }
+    50% {
+      transform: translateX(-800px) translateY(30px);
+    }
+    75% {
+      transform: translateX(-100px) translateY(600px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  @keyframes ziggy2 {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(100px) translateY(100px);
+    }
+    50% {
+      transform: translateX(0) translateY(0);
+    }
+    75% {
+      transform: translateX(-800px) translateY(100px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  #fourthlight {
+    top: 70%;
+    animation: ziggy3 10s linear infinite;
+  }
+
+  @keyframes ziggy3 {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(-100px) translateY(-900px);
+    }
+    35% {
+        transform: translateX(-800px) translateY(1000px); 
+    }
+    50% {
+      transform: translateX(0) translateY(0);
+    }
+    75% {
+      transform: translateX(-100px) translateY(100px);
+    }
+    85% {
+      transform: translateX(600px) translateY(-100px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
 
 
 h1 {
@@ -43,6 +153,10 @@ button {
     border-radius: 10px;
     margin: auto 9px;
     cursor: pointer;
+}
+
+.length-button {
+    color: #fff;
 }
 
 .button-color {
@@ -200,7 +314,7 @@ p.con--result {
     position: absolute;
     top: 100px;
     width: 156px;
-    height: 277px;
+    height: auto;
     background: #222222;
     border-radius: 10px;
     z-index: 44;
@@ -215,7 +329,7 @@ p.con--result {
 }
 
 
-.list, .lower--list{
+.list, .lower--list, .masses, .volumes, .length-list{
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -226,6 +340,14 @@ p.con--result {
     border-bottom: 0.25px solid #404040;
     cursor: pointer;
 }
+
+.masses, .volumes {
+    display: none;
+}
+
+
+
+
 
 .darken {
     color: #939393;
@@ -288,6 +410,11 @@ p.con--result {
         background-image: url(./img/Ellipse\ 46.png), url(./img/Ellipse\ 43\ \(1\).png);
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: 0% 50%, right 10%;
+    }
+
+    #firstlight, #secondlight, #thirdlight, #fourthlight {
+       display: none;
+    
     }
     
     .main--content {
@@ -407,7 +534,7 @@ p.con--result {
         position: absolute;
         top: 48px;
         width: 156px;
-        height: 277px;
+        height: auto;
         background: #222222;
         border-radius: 10px;
         z-index: 1000;
@@ -422,7 +549,7 @@ p.con--result {
     }
     
     
-    .list, .lower--list{
+    .list, .lower--list, .masses, .volumes, .length-list{
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
@@ -433,6 +560,12 @@ p.con--result {
         border-bottom: 0.25px solid #404040;
         cursor: pointer;
     }
+
+    .masses, .volumes {
+        display: none;
+    }
+
+
     
     .darken {
         color: #939393;
