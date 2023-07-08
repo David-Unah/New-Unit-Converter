@@ -107,19 +107,19 @@ const list = document.getElementsByClassName("list")
 const meter = document.getElementById("meter")
 
 //list darken function
-function listDarkedSelect(item, a, b, c, d) {
+/* function listDarkedSelect(item, a, b, c, d) {
     item[a].classList.remove("darken")
     item[b].classList.remove("darken")
     item[c].classList.remove("darken")
     item[d].classList.remove("darken")
     
 }
-
+ */
 
 
 details[0].addEventListener('click', function() {
     measureListOne.classList.toggle("show")
-    if (meter.innerText === list[1].innerText) {
+    /* if (meter.innerText === list[1].innerText) {
         list[1].classList.add("darken")
         listDarkedSelect(list, 2, 3, 4, 5)
     } else if (meter.innerText === list[2].innerText) {
@@ -134,7 +134,7 @@ details[0].addEventListener('click', function() {
     } else {
         list[5].classList.add("darken")
         listDarkedSelect(list, 1, 2, 3, 4)
-    }
+    } */
     
 })
 
@@ -170,7 +170,7 @@ const lowerList = document.getElementsByClassName("lower--list")
 const bottomSelect = document.getElementById("bottom--select")
 details[1].addEventListener('click', function() {
         measureListTwo.classList.toggle("show")
-        if (bottomSelect.innerText === lowerList[1].innerText) {
+        /* if (bottomSelect.innerText === lowerList[1].innerText) {
             lowerList[1].classList.add("darken")
             listDarkedSelect(lowerList, 2, 3, 4, 5)
         } else if (bottomSelect.innerText === lowerList[2].innerText) {
@@ -185,7 +185,7 @@ details[1].addEventListener('click', function() {
         } else if (bottomSelect.innerText === lowerList[5].innerText) {
             lowerList[5].classList.add("darken")
             listDarkedSelect(lowerList, 1, 2, 3, 4)
-        }
+        } */
        
 })
 
@@ -223,15 +223,15 @@ input[0].addEventListener("input", function() {
     inputData = input[0].value
     if (meter.innerText === "Meter") {
         if (bottomSelect.innerText === "Kilometer") {
-            convertToKilometer(1000) //m to km - reuse function
+            convertToKilometer(1000); //m to km - reuse function
         } else if (bottomSelect.innerText === "Centimeter") {
-            convertToCentimeter(100) 
+            convertToCentimeter(100); 
         } else if (bottomSelect.innerText === "Foot") {
-            convertToFeet(3.281)  // m to ft - reused function
+            convertToFeet(3.281);  // m to ft - reused function
         } else if (bottomSelect.innerText === "Yard") {
-            convertToFeet(1.094) // m to yd - reused function
+            convertToFeet(1.094); // m to yd - reused function
         } else if (bottomSelect.innerText === "Meter") {
-            similarText()
+            similarText();
         }
     } else if (meter.innerText === "Kilometer") {
             if (bottomSelect.innerText === "Meter") {
