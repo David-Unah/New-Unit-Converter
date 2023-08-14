@@ -361,10 +361,12 @@ p.con--result {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 }
 
 .swap--icon {
     cursor: pointer;
+    z-index: 999;
 }
 
 .calculator {

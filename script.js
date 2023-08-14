@@ -106,35 +106,10 @@ const measureList = document.getElementsByClassName("measure--list")
 const list = document.getElementsByClassName("list")
 const meter = document.getElementById("meter")
 
-//list darken function
-/* function listDarkedSelect(item, a, b, c, d) {
-    item[a].classList.remove("darken")
-    item[b].classList.remove("darken")
-    item[c].classList.remove("darken")
-    item[d].classList.remove("darken")
-    
-}
- */
 
 
 details[0].addEventListener('click', function() {
     measureListOne.classList.toggle("show")
-    /* if (meter.innerText === list[1].innerText) {
-        list[1].classList.add("darken")
-        listDarkedSelect(list, 2, 3, 4, 5)
-    } else if (meter.innerText === list[2].innerText) {
-        list[2].classList.add("darken")
-        listDarkedSelect(list, 1, 3, 4, 5)
-    } else if (meter.innerText === list[3].innerText) {
-        list[3].classList.add("darken")
-        listDarkedSelect(list, 1, 2, 4, 5)
-    } else if (meter.innerText === list[4].innerText) {
-        list[4].classList.add("darken")
-        listDarkedSelect(list, 1, 2, 3, 5)
-    } else {
-        list[5].classList.add("darken")
-        listDarkedSelect(list, 1, 2, 3, 4)
-    } */
     
 })
 
@@ -170,22 +145,6 @@ const lowerList = document.getElementsByClassName("lower--list")
 const bottomSelect = document.getElementById("bottom--select")
 details[1].addEventListener('click', function() {
         measureListTwo.classList.toggle("show")
-        /* if (bottomSelect.innerText === lowerList[1].innerText) {
-            lowerList[1].classList.add("darken")
-            listDarkedSelect(lowerList, 2, 3, 4, 5)
-        } else if (bottomSelect.innerText === lowerList[2].innerText) {
-            lowerList[2].classList.add("darken")
-            listDarkedSelect(lowerList, 1, 3, 4, 5)
-        } else if (bottomSelect.innerText === lowerList[3].innerText) {
-            lowerList[3].classList.add("darken")
-            listDarkedSelect(lowerList, 1, 2, 4, 5)
-        } else if (bottomSelect.innerText === lowerList[4].innerText) {
-            lowerList[4].classList.add("darken")
-            listDarkedSelect(lowerList, 1, 2, 3, 5)
-        } else if (bottomSelect.innerText === lowerList[5].innerText) {
-            lowerList[5].classList.add("darken")
-            listDarkedSelect(lowerList, 1, 2, 3, 4)
-        } */
        
 })
 
@@ -220,6 +179,7 @@ const input = document.getElementsByClassName("input")
 
 
 input[0].addEventListener("input", function() {
+    bottomSelect.classList.remove("bounce")
     inputData = input[0].value
     if (meter.innerText === "Meter") {
         if (bottomSelect.innerText === "Kilometer") {
@@ -417,7 +377,7 @@ input[1].addEventListener("input", function() {
         } else if (meter.innerText === "Milligram") {
             convertToCentimeter(1000000000)
         } else if (meter.innerText === "Tonne") {
-            similarText()
+            similarTextSecond()
         }
     } else if (bottomSelect.innerText === "Kilogram") {
         if (meter.innerText === "Tonne") {
@@ -427,7 +387,7 @@ input[1].addEventListener("input", function() {
         } else if (meter.innerText === "Milligram") {
             convertToCentimeter(1000000)
         } else if (meter.innerText === "Kilogram") {
-            similarText()
+            similarTextSecond()
         }
     } else if (bottomSelect.innerText === "Gram") {
         if (meter.innerText === "Tonne") {
@@ -437,7 +397,7 @@ input[1].addEventListener("input", function() {
         } else if (meter.innerText === "Milligram") {
             convertToCentimeter(1000)
         } else if (meter.innerText === "Gram") {
-            similarText()
+            similarTextSecond()
         }
     } else if (bottomSelect.innerText === "Milligram") {
         if (meter.innerText === "Tonne") {
@@ -447,19 +407,19 @@ input[1].addEventListener("input", function() {
         } else if (meter.innerText === "Gram") {
             convertToKilometer(1000)
         } else if (meter.innerText === "Milligram") {
-            similarText()
+            similarTextSecond()
         }
     } else if (bottomSelect.innerText === "Liter") {
         if (meter.innerText === "Milliliter") {
             convertToCentimeter(1000)
         } else if (meter.innerText === "Liter") {
-            similarText()
+            similarTextSecond()
         }
     } else if (bottomSelect.innerText === "Milliliter") {
         if (meter.innerText === "Liter") {
             convertToKilometer(1000)
         } else if (meter.innerText === "Milliliter") {
-            similarText()
+            similarTextSecond()
         }
     }
 
