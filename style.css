@@ -580,7 +580,7 @@ p.con--result {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        z-index: 2;
+        z-index: 9999;
     }
     
     .swap--icon {
